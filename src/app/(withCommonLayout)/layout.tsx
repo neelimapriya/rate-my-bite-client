@@ -1,16 +1,18 @@
-import Navbar from '@/components/shared/Navbar';
-import React from 'react';
-
+import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/shared/Navbar";
+import React from "react";
 const CommonLayout = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div>
-            <Navbar />
-            <div className='container mx-auto mt-12 px-5 md:px-0'>
-                {children}
-            </div>
-
+  return (
+    <div>
+      <div className="">
+        <Navbar />
+        <div className=" mx-auto  px-5 md:px-0">
+          {children}
         </div>
-    );
+        <Footer />
+      </div>
+    </div>
+  );
 };
 
 export default CommonLayout;

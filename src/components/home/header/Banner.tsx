@@ -1,66 +1,59 @@
-"use client"
-import * as React from "react"
+"use client";
 
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
-import "./Styles.css"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from '@/components/ui/button'
 export default function Banner() {
-    const [sliderRef] = useKeenSlider<HTMLDivElement>(
-        {
-            loop: true,
-        },
-        [
-            (slider) => {
-                let timeout: ReturnType<typeof setTimeout>
-                let mouseOver = false
-                function clearNextTimeout() {
-                    clearTimeout(timeout)
-                }
-                function nextTimeout() {
-                    clearTimeout(timeout)
-                    if (mouseOver) return
-                    timeout = setTimeout(() => {
-                        slider.next()
-                    }, 2000)
-                }
-                slider.on("created", () => {
-                    slider.container.addEventListener("mouseover", () => {
-                        mouseOver = true
-                        clearNextTimeout()
-                    })
-                    slider.container.addEventListener("mouseout", () => {
-                        mouseOver = false
-                        nextTimeout()
-                    })
-                    nextTimeout()
-                })
-                slider.on("dragStarted", clearNextTimeout)
-                slider.on("animationEnded", nextTimeout)
-                slider.on("updated", nextTimeout)
-            },
-        ]
-    )
 
-    return (
-        <>
-            <div ref={sliderRef} className="keen-slider lg:h-[500px] h-[400px]">
-                <div className="keen-slider__slide relative number-slide1">
-                    <div className="h-full absolute w-full z-0 bg-black/80 opacity-35">
 
-                    </div>
-                    <div className="relative z-20">
-                        <h2 className="text-4xl font-semibold">Delicious Meals, Delivered Fresh!</h2>
-                        <Link href={'/login'}><Button>More</Button></Link>
-                    </div>
-                </div>
-                <div className="keen-slider__slide number-slide2">2</div>
-                <div className="keen-slider__slide number-slide3">3</div>
-                <div className="keen-slider__slide number-slide4">4</div>
-                <div className="keen-slider__slide number-slide5">5</div>
-                <div className="keen-slider__slide number-slide6">6</div>
+  return (
+
+    <div className="w-full h-screen relative inset-0 z-10 pt-28 md:pb-0">
+      <div className="absolute min-h-screen inset-0 -z-10">
+        <Image
+          src="/image/banner/home-banner.jpg"
+          alt="Hero Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+
+      <div className="container mx-auto pt-10 relative z-10 text-white">
+        <div className="h-full grid   items-center text-center">
+          <div className="relative z-10 text-center flex flex-col items-center">
+            <div className=" mx-auto pb-8">
+              <Image
+                src="/image/logo/🦆 icon _dish spoon knife_.png"
+                height={100}
+                width={100}
+                alt="logo icon"
+              />
+              <span className=" text-lg font-mono">Rate My Bite</span>
             </div>
-        </>
-    )
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+              Discover Amazing Street Food
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl mb-8 text-gray-200">
+              Find, share, and review the best street food spots in your city. Join our community of food enthusiasts!
+            </p>
+
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+                <Link href="/posts">Explore Food Spots</Link>
+              </Button>
+              <Button size="lg" variant="secondary" className="">
+                <Link href="/signup">Join Community</Link>
+              </Button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  );
 }
