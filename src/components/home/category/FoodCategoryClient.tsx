@@ -19,7 +19,7 @@ const FoodCategoryClient = ({ data }: Props) => {
       />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
-        {data.map((category, index) => (
+        {data?.map((category, index) => (
           <motion.div
             key={category.id}
             initial={{ opacity: 0, y: 50, scale: 0.95 }}

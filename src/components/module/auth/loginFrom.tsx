@@ -76,7 +76,7 @@ const LoginForm = () => {
                                 name="email"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel className='text-black/85'>Email or Phone</FormLabel>
+                                        <FormLabel className='text-black/85 dark:text-white'>Email or Phone</FormLabel>
                                         <div className="relative">
                                             <Mail className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                                             <FormControl>
