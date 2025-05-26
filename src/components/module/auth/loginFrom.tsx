@@ -47,11 +47,11 @@ const LoginForm = () => {
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         try {
             const result = await loginUser(data);
-            console.log({ result });
+            // console.log({ result });
             if (result?.success) {
                 const user = await getCurrentUser() as IUser;
                 setUser(user);
-                console.log({ redirect, user: user?.role })
+                // console.log({ redirect, user: user?.role })
                 toast.success(result?.message || "Login successful")
                 router.push(redirect)
             } else {

@@ -23,12 +23,12 @@ export function CreateCategoryModal() {
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const { register, handleSubmit, watch, reset, formState: { isSubmitting } } = useForm()
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-        console.log(data)
+        // console.log(data)
         const toastId = toast.loading("Creating category...")
         const files = Array.from(data.image) as File[]
         const uploadPromises = files.map((file) => uploadToCloudinary(file))
         const imageUrls = (await Promise.all(uploadPromises)).filter(Boolean) as string[]
-        console.log({ imageUrls })
+        // console.log({ imageUrls })
         if (!imageUrls.length) {
             toast.error("Image upload failed.")
             return
@@ -49,7 +49,7 @@ export function CreateCategoryModal() {
         } catch (error) {
             console.log(error)
         }
-        console.log({ categoryData })
+        // console.log({ categoryData })
     }
     const watchedImage = watch("image")
 

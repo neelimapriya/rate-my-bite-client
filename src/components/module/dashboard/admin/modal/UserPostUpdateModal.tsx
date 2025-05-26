@@ -34,9 +34,9 @@ export function UserPostUpdateModal({ post }: { post: IPost }) {
     });
     const [categories, setCategories] = useState([])
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-        console.log(data)
+        // console.log(data)
         const toastId = toast.loading("Creating category...")
-        console.log({ data })
+        // console.log({ data })
 
         try {
             const result = await createCategory(data)
@@ -63,7 +63,7 @@ export function UserPostUpdateModal({ post }: { post: IPost }) {
                 console.log(error)
             }
         }
-        console.log("Hello world")
+       
         fetchCategory()
     }, [])
     return (

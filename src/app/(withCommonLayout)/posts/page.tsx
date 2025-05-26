@@ -41,14 +41,12 @@ export default function PostsPage() {
 
         setAllCategories(res?.data || [])
       } catch (err: any) {
-        console.error("Failed to load categories", err)
+        // console.error("Failed to load categories", err)
+        throw new err
       }
     }
     fetchCategories()
   }, [])
-
-  // 🔄 Fetch Posts
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchPosts = async () => {
     setLoading(true)
     try {
@@ -59,7 +57,7 @@ export default function PostsPage() {
         minPrice,
         maxPrice,
       })
-      console.log(res)
+      // console.log(res)
       setPosts(res?.data || [])
       setTotalPages(Math.ceil((res?.meta?.total || 1) / POSTS_PER_PAGE))
     } catch (error) {

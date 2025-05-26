@@ -87,11 +87,11 @@ export function PostsTable({ data, meta, isPaginate = true }: PostsTableProps) {
         }
     }
     const onDelete = async (id: string, data: Partial<IPost>) => {
-        console.log(id, data)
+        // console.log(id, data)
         const toastId = toast.loading("Updating status...")
         try {
             const result = await updatePost(id, data)
-            console.log(result)
+            // console.log(result)
             if (result?.success) {
                 toast.success(result?.message || "Status updated", { id: toastId })
             } else {
@@ -113,7 +113,7 @@ export function PostsTable({ data, meta, isPaginate = true }: PostsTableProps) {
         }
         try {
             const result = await updatePost(post?.id, { isPremium: isTrue })
-            console.log({ result })
+            // console.log({ result })
             if (result?.success) {
                 toast.success(result?.message || "Marked as premium", { id: toastId })
             } else {

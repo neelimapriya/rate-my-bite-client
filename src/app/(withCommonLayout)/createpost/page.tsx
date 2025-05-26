@@ -71,7 +71,7 @@ const Createpost = () => {
       const files = Array.from(data.image)
       const uploadPromises = files.map((file) => uploadToCloudinary(file))
       const imageUrls = (await Promise.all(uploadPromises)).filter(Boolean) as string[]
-      console.log({ imageUrls })
+      // console.log({ imageUrls })
       if (!imageUrls.length) {
         toast.error("Image upload failed.")
         return
@@ -89,7 +89,7 @@ const Createpost = () => {
       }
 
       const result = await createPost(postData)
-      console.log({ result })
+      // console.log({ result })
       if (result?.success) {
         toast.success("Post created successfully! Wait for admin approval")
         route.push('/user/posts')

@@ -15,7 +15,7 @@ export const uploadToCloudinary = async (file: File): Promise<string | null> => 
   
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('Cloudinary error details:', errorData);
+        // console.error('Cloudinary error details:', errorData);
         throw new Error(`Upload failed: ${errorData.error.message}`);
       };
   

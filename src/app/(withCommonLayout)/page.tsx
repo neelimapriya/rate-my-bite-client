@@ -1,5 +1,4 @@
 import FoodCategory from "@/components/home/category/FoodCategory";
-import Community from "@/components/home/community";
 import Discover from "@/components/home/discover";
 import FeatureFoodSpot from "@/components/home/FeatureFoodSpot/FeatureFoodSpot";
 import { FoodEvents } from "@/components/home/food-event/FoodEvents";
@@ -23,7 +22,6 @@ export default function Home() {
         <HowItWorks />
         <FAQSection />
         <Gallery />
-        <Community />
       </div>
       <Discover />
     </div>

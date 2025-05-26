@@ -36,7 +36,7 @@ export function PostUpdateModal({ post, onSubmit }: { post: IPost, onSubmit: (id
     const handleSubmit = (data: FormValues) => {
         onSubmit(post?.id, data);
     };
-    console.log({ isSubmitting })
+    // console.log({ isSubmitting })
     return (
         <Dialog>
             <DialogTrigger asChild>

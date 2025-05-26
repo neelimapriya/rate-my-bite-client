@@ -41,10 +41,10 @@ export default function Banner() {
 
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+              <Button size="lg" className="bg-primary hover:bg-black ">
                 <Link href="/posts">Explore Food Spots</Link>
               </Button>
-              <Button size="lg" variant="secondary" className="">
+              <Button size="lg" variant="secondary" className="hover:bg-primary hover:text-white">
                 <Link href="/signup">Join Community</Link>
               </Button>
             </div>
