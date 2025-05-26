@@ -38,7 +38,7 @@ const Navbar = () => {
             src="/image/logo/logo.png"
             alt="Logo"
             width={120}
-            height={120}
+            height={60}
             className=""
           />
 
