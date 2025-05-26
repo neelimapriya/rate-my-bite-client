@@ -1,6 +1,6 @@
 # Rate My Bite
 
-https://project-9-client.vercel.app/
+(https://rate-my-bite-phi.vercel.app)
 
 ## 🍔 Overview
 
