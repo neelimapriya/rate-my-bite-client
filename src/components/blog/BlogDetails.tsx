@@ -22,7 +22,7 @@ import {
     Link2,
     ThumbsUp,
     ChevronLeft,
-    ChevronRight,
+    
     Send,
     BookmarkPlus,
 } from "lucide-react"
@@ -127,18 +127,18 @@ export default function BlogPostDetail() {
     const [commentText, setCommentText] = useState("")
 
     return (
-        <div className="bg-gray-50 min-h-screen pb-16">
+        <div className="bg-gray-50 min-h-screen pb-16 dark:bg-black text-white">
             {/* Blog Post Header */}
             <div className="bg-primary/80 text-white py-12 md:py-20">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
-                        <Link href="/blog" className="inline-flex items-center text-white/90 hover:text-white mb-4">
+                        <Link href="/blog" className="inline-flex items-center text-black hover:text-white mb-4">
                             <ChevronLeft className="h-4 w-4 mr-1" />
                             Back to all articles
                         </Link>
                         <Badge className="mb-4 bg-white text-orange-600">{blogPost.category}</Badge>
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{blogPost.title}</h1>
-                        <div className="flex flex-wrap items-center gap-4 text-white/90">
+                        <div className="flex flex-wrap items-center gap-4 text-black">
                             <div className="flex items-center">
                                 <Avatar className="h-10 w-10 mr-2 border-2 border-white">
                                     <AvatarImage src={blogPost.author.image || "/placeholder.svg"} alt={blogPost.author.name} />
@@ -221,65 +221,65 @@ export default function BlogPostDetail() {
                                     Thailand&apos;s capital is unmatched in its diversity and authenticity.
                                 </p>
 
-                                <p>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     As you navigate the bustling streets of Bangkok, you&apos;ll find that some of the most memorable culinary
                                     experiences come not from high-end restaurants, but from humble street vendors who have perfected
                                     their signature dishes over generations. These culinary artisans create masterpieces using simple
                                     equipment and fresh ingredients, often cooking right before your eyes.
                                 </p>
 
-                                <h2>1. Pad Thai</h2>
-                                <p>
+                                <h2 className="text-xl font-semibold text-gray-700 mb-6">1. Pad Thai</h2>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     No list of Thai street food would be complete without mentioning Pad Thai. This iconic stir-fried
                                     noodle dish is a perfect balance of sweet, sour, and savory flavors. The best versions are cooked over
                                     high heat in a well-seasoned wok, giving the dish its characteristic smoky aroma known as &quot;wok hei.&quot;
                                 </p>
-                                <p>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     <strong>Where to find it:</strong> Thip Samai on Maha Chai Road is often cited as having the best Pad
                                     Thai in Bangkok, with lines forming well before they open at 5 PM.
                                 </p>
 
-                                <h2>2. Som Tam (Green Papaya Salad)</h2>
-                                <p>
+                                <h2 className="text-xl font-semibold text-gray-700 mb-6">2. Som Tam (Green Papaya Salad)</h2>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     This refreshing yet fiery salad is made by pounding shredded unripe papaya with a mortar and pestle,
                                     mixing it with lime juice, fish sauce, palm sugar, chili, and various other ingredients. The result is
                                     a perfect balance of sweet, sour, salty, and spicy flavors that exemplify Thai cuisine.
                                 </p>
-                                <p>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     <strong>Where to find it:</strong> Som Tam stalls are ubiquitous throughout Bangkok, but for an
                                     authentic experience, head to Som Tam Jay So in the Siam Square area.
                                 </p>
 
-                                <h2>3. Moo Ping (Grilled Pork Skewers)</h2>
-                                <p>
+                                <h2 className="text-xl font-semibold text-gray-700 mb-6">3. Moo Ping (Grilled Pork Skewers)</h2>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     These marinated pork skewers are grilled over charcoal until caramelized and smoky. The marinade
                                     typically includes garlic, coriander root, pepper, and coconut milk, creating a sweet and savory
                                     flavor profile that&apos;s irresistible, especially when paired with sticky rice.
                                 </p>
 
-                                <blockquote>
+                                <blockquote className="text-xl font-medium text-gray-700 mb-6">
                                     <blockquote>
                                         &quot;The secret to great street food is simplicity and freshness. Bangkok&apos;s vendors understand that
                                         quality ingredients, cooked with care, need little embellishment.&quot; — Chef David Thompson
                                     </blockquote>
                                 </blockquote>
 
-                                <h2>4. Boat Noodles (Kuay Teow Reua)</h2>
-                                <p>
+                                <h2 className="text-xl font-semibold text-gray-700 mb-6">4. Boat Noodles (Kuay Teow Reua)</h2>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     These intensely flavored noodle soups were traditionally sold from boats in Bangkok&apos;s canals. The
                                     broth is rich and complex, often containing pork or beef, blood, herbs, and spices. The small serving
                                     size (traditionally in a tiny bowl) allows you to try multiple variations.
                                 </p>
 
-                                <h2>5. Mango Sticky Rice</h2>
-                                <p>
+                                <h2 className="text-xl font-semibold text-gray-700 mb-6">5. Mango Sticky Rice</h2>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     This beloved dessert combines sweet glutinous rice with fresh mango and coconut cream. The contrast
                                     between the warm, chewy rice and the cool, juicy mango creates a dessert that&apos;s greater than the sum
                                     of its parts.
                                 </p>
 
-                                <h3>Tips for Enjoying Bangkok Street Food Safely</h3>
-                                <ul>
+                                <h3 className="text-xl font-medium text-gray-700 mb-6">Tips for Enjoying Bangkok Street Food Safely</h3>
+                                <ul className="text-xl font-medium text-gray-700 mb-6">
                                     <li>Look for busy stalls with high turnover – this ensures freshness</li>
                                     <li>Watch how the food is handled and prepared</li>
                                     <li>Bring hand sanitizer or wet wipes for before and after eating</li>
@@ -289,13 +289,13 @@ export default function BlogPostDetail() {
                                     </li>
                                 </ul>
 
-                                <p>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     Bangkok&apos;s street food scene is constantly evolving, but these classics remain at the heart of the
                                     city&apos;s culinary identity. Whether you&apos;re a first-time visitor or a seasoned traveler, these dishes
                                     offer an authentic taste of Thai culture and hospitality.
                                 </p>
 
-                                <p>
+                                <p className="text-xl font-medium text-gray-700 mb-6">
                                     Have you tried any of these dishes in Bangkok? Or do you have other favorites that didn&apos;t make our
                                     list? Let us know in the comments below!
                                 </p>
@@ -311,7 +311,7 @@ export default function BlogPostDetail() {
                             </div>
 
                             {/* Author Bio */}
-                            <Card className="mt-12">
+                            <Card className="mt-12 dark:bg-black">
                                 <CardContent className="p-6">
                                     <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
                                         <Avatar className="h-20 w-20">
@@ -328,7 +328,7 @@ export default function BlogPostDetail() {
                             </Card>
 
                             {/* Post Navigation */}
-                            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {/* <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <Link
                                     href="/blog/previous-post"
                                     className="p-4 border rounded-lg hover:bg-gray-50 transition-colors flex items-center"
@@ -349,7 +349,7 @@ export default function BlogPostDetail() {
                                     </div>
                                     <ChevronRight className="h-5 w-5 ml-2" />
                                 </Link>
-                            </div>
+                            </div> */}
 
                             {/* Comments Section */}
                             <div className="mt-12">
@@ -436,7 +436,7 @@ export default function BlogPostDetail() {
                     <h2 className="text-2xl font-bold mb-6">You Might Also Like</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {relatedPosts.map((post) => (
-                            <Card key={post.id} className="overflow-hidden hover:shadow-md transition-shadow py-0">
+                            <Card key={post.id} className="overflow-hidden hover:shadow-md transition-shadow py-0 dark:bg-black">
                                 <div className="relative">
                                     <Image
                                         src={post.image || "/placeholder.svg"}

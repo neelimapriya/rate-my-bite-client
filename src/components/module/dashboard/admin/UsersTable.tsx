@@ -43,7 +43,7 @@ export function UsersTable({ data, meta, isPaginate = true }: UsersTableProps) {
         })
     }
     const deleteUser = async (id: string): Promise<void> => {
-        console.log(id)
+        // console.log(id)
         const toastId = toast.loading("Deleting user...")
         try {
             const result = await deleteUserStatus(id)

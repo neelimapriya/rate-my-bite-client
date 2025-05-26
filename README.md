@@ -127,3 +127,8 @@ npm run build
 - **Users**: View and manage user
 - **Posts**: Edit or delete existing posts
 - **Category**: View and manage category
+
+```
+Admin Credential 
+admin@gmail.com
+Password- 123456

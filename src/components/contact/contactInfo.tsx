@@ -2,7 +2,7 @@ import { MailOpen, MapPinned, Phone } from "lucide-react";
 
 const ContactInfo = () => {
   const cardStyles =
-    "bg-white dark:bg-gray-800 rounded-xl shadow p-6 text-center space-y-4 transition-all duration-500 shadow-md shadow-[#FF3C48] transition transform hover:-translate-y-2 cursor-pointer  ";
+    "bg-white dark:bg-black rounded-xl shadow p-6 text-center space-y-4 transition-all duration-500 shadow-md shadow-[#FF3C48] transition transform hover:-translate-y-2 cursor-pointer  ";
 
   const textStyle = "text-gray-600 dark:text-gray-300  ";
 

@@ -34,7 +34,7 @@ export default function Profile({ data }: { data: IUser }) {
                                 <User className="h-12 w-12" />
                             </AvatarFallback>
                         </Avatar>
-                        <h2 className="text-xl font-semibold">{data?.fullName || "John Doe"}</h2>
+                        <h2 className="text-xl font-semibold">{data?.role == "ADMIN"  ? "Nelima Sultana" : data?.fullName}</h2>
                         <h2 className="text-xs mt-2 bg-red-100 text-red-500 px-3 py-1 rounded-full font-bold capitalize">{data?.role || "USER"}</h2>
                     </div>
 

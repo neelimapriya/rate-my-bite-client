@@ -47,7 +47,7 @@ const RegistrationForm = () => {
 
         try {
             const result = await registerUser(data);
-            console.log({ result });
+            // console.log({ result });
             if (result?.success) {
                 toast.success(result?.message || "Registration successful")
                 const user = await getCurrentUser() as IUser;

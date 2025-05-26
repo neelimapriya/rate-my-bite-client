@@ -1,5 +1,5 @@
 import { ILink } from "@/types/link.type";
-import { LucideAlbum, LucidePanelRightInactive, SquareTerminal, UserRoundPenIcon, Users } from "lucide-react";
+import { Home, LucideAlbum, LucidePanelRightInactive, SquareTerminal, UserRoundPenIcon, Users } from "lucide-react";
 
 export const adminLinks: ILink[] = [
     {
@@ -27,6 +27,11 @@ export const adminLinks: ILink[] = [
         href: "/profile",
         icon: UserRoundPenIcon,
     },
+     {
+        title: "Home",
+        href: "/",
+        icon: Home,
+    },
 
 
 ];
@@ -45,6 +50,11 @@ export const userLinks = [
         title: "My Profile",
         href: "/profile",
         icon: UserRoundPenIcon,
+    },
+    {
+        title: "Home",
+        href: "/",
+        icon: Home,
     },
 ];
 

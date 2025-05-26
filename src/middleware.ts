@@ -48,14 +48,14 @@ export async function middleware(request: NextRequest) {
 
   if (user && normalizedRole && roleBasedRoutes[normalizedRole]) {
     const allowedRoutes = roleBasedRoutes[normalizedRole] || [];
-    console.log(
-      "allowed",
-      normalizedRole,
-      allowedRoutes,
-      pathname,
-      user,
-      allowedRoutes.some((regex) => pathname.match(regex))
-    );
+    // console.log(
+    //   "allowed",
+    //   normalizedRole,
+    //   allowedRoutes,
+    //   pathname,
+    //   user,
+    //   allowedRoutes.some((regex) => pathname.match(regex))
+    // );
     if (allowedRoutes.some((regex) => pathname.match(regex))) {
       return NextResponse.next();
     } else {

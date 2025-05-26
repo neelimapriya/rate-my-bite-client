@@ -31,7 +31,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarHeader>
                     <div className="">
 
-                        <Link href="/" className="flex items-center justify-center gap-2 p-0 ">
+                        <Link href="/" className="flex items-center justify-center p-0 flex-col">
                             <Image
                                 src="/image/logo/logo.png"
                                 alt="Logo"
@@ -39,10 +39,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                 height={150}
                                 className=""
                             />
-
+                            <h2 className="hidden dark:flex text-white text-center">Rate My Bite</h2>
                         </Link>
                         <div className="flex flex-col gap-5
-                     p-2 border-y border-gray-200 bg-white">
+                     p-2 border-y border-gray-200 ">
 
                             <div className="flex flex-col  items-center ">
                                 <UserCircle className="w-12 h-12" />
@@ -68,8 +68,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                             speedMultiplier={1}
                         />
 
-                    </div> : <SidebarContent>
-                        <NavMain items={user?.role === "ADMIN" ? adminLinks : userLinks} />
+                    </div> : <SidebarContent >
+                        <NavMain  items={user?.role === "ADMIN" ? adminLinks : userLinks} />
 
                     </SidebarContent>
                 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Input } from "../ui/input";
 
 const links = [
   { label: "Home", href: "/" },
@@ -17,35 +18,32 @@ const locations = ["Dhaka", "Chattogram", "Sylhet", "Rajshahi"];
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-black text-white">
       <div className="container mx-auto px-6 py-12">
         {/* Header */}
         <div className="md:flex md:items-center md:justify-between">
           <h1 className="text-xl font-semibold tracking-tight md:mx-3 xl:text-2xl">
-            Subscribe to our newsletter for <span className="text-primary">tasty updates 🍔</span>
+            Subscribe to our newsletter for{" "}
+            <span className="text-primary">tasty updates 🍔</span>
           </h1>
 
           <div className="mt-6 md:mx-3 md:mt-0">
-            <Button
-              variant="destructive"
-              className="inline-flex items-center justify-center px-4 py-2 text-sm"
-            >
-              <span>Join Now</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+            <div className="text-center md:text-left">
+            
+              <form className="flex flex-col sm:flex-row gap-4 items-center sm:items-stretch">
+                <Input
+                  type="email"
+                  placeholder="Your Email Address"
+                  className="rounded-full border border-gray-300 focus-visible:ring-[#FF3C48]"
                 />
-              </svg>
-            </Button>
+                <Button
+                  type="submit"
+                  className="bg-[#FF3C48] hover:bg-[#e0353f] text-white px-6 py-3 rounded-full font-semibold"
+                >
+                  SUBSCRIBE
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
 
@@ -89,13 +87,22 @@ export default function Footer() {
           <div>
             <p className="font-semibold">Categories</p>
             <div className="mt-5 space-y-2">
-              <a href="#" className="block text-gray-300 hover:underline hover:text-primary">
+              <a
+                href="#"
+                className="block text-gray-300 hover:underline hover:text-primary"
+              >
                 Street Food
               </a>
-              <a href="#" className="block text-gray-300 hover:underline hover:text-primary">
+              <a
+                href="#"
+                className="block text-gray-300 hover:underline hover:text-primary"
+              >
                 Fine Dining
               </a>
-              <a href="#" className="block text-gray-300 hover:underline hover:text-primary">
+              <a
+                href="#"
+                className="block text-gray-300 hover:underline hover:text-primary"
+              >
                 Cafés & Desserts
               </a>
             </div>
@@ -105,16 +112,37 @@ export default function Footer() {
           <div>
             <p className="font-semibold">Contact Us</p>
             <div className="mt-5 space-y-2">
-              <a href="tel:+8807684734978" className="block text-gray-300 hover:underline hover:text-primary">
+              <a
+                href="tel:+8807684734978"
+                className="block text-gray-300 hover:underline hover:text-primary"
+              >
                 +880 768 473 4978
               </a>
-              <a href="mailto:info@foodreview.com" className="block text-gray-300 hover:underline hover:text-primary">
+              <a
+                href="mailto:info@foodreview.com"
+                className="block text-gray-300 hover:underline hover:text-primary"
+              >
                 info@foodreview.com
               </a>
               <div className="flex items-center space-x-3">
-                <a href="" className="p-2 hover:bg-primary text-white rounded-full transition-colors duration-500"><Facebook /></a>
-                <a href="" className="p-2 hover:bg-primary text-white rounded-full transition-colors duration-500"><Instagram /></a>
-                <a href="" className="p-2 hover:bg-primary text-white rounded-full transition-colors duration-500"><Twitter /></a>
+                <a
+                  href=""
+                  className="p-2 hover:bg-primary text-white rounded-full transition-colors duration-500"
+                >
+                  <Facebook />
+                </a>
+                <a
+                  href=""
+                  className="p-2 hover:bg-primary text-white rounded-full transition-colors duration-500"
+                >
+                  <Instagram />
+                </a>
+                <a
+                  href=""
+                  className="p-2 hover:bg-primary text-white rounded-full transition-colors duration-500"
+                >
+                  <Twitter />
+                </a>
               </div>
             </div>
           </div>
@@ -133,7 +161,9 @@ export default function Footer() {
             />
             <span className=" text-lg font-mono">Rate My Bite</span>
           </div>
-          <p className=" text-sm text-gray-400 sm:mt-0">© 2025 Food Review. All rights reserved.</p>
+          <p className=" text-sm text-gray-400 sm:mt-0">
+            © 2025 Food Review. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

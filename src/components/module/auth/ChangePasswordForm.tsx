@@ -46,7 +46,7 @@ export default function ChangePassword() {
         // return
         try {
             const result = await changePassword(modifiedData);
-            console.log({ result });
+            // console.log({ result });
             if (result?.success) {
                 toast.success(result?.message || "Password updated")
                 router.push('/')

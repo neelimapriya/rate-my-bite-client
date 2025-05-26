@@ -20,7 +20,7 @@ export default async function UserDashboard() {
     const { data } = await getCredentials(url) as { data: UserDashboardData }
     // user info
      const userInfo = await getCurrentUser() as IUser;
-            console.log(userInfo);
+            // console.log(userInfo);
     return (
         <div className="p-6 space-y-6">
             <h1 className="text-2xl font-bold">Welcome, {userInfo?.fullName || ""}</h1>

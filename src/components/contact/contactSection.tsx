@@ -4,7 +4,7 @@ import React from 'react';
 
 const ContactSection = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 ">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8  ">
       {/* Map */}
       <div className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg">
         <iframe
@@ -17,7 +17,7 @@ const ContactSection = () => {
       </div>
 
       {/* Contact Form */}
-      <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+      <div className="bg-white dark:bg-black p-6 rounded-2xl shadow-lg ">
         <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white  border-b-4 border-[#FF3C48] pb-3 ">Send Us Message</h2>
         <form className="space-y-4">
           <div className="flex gap-4">
