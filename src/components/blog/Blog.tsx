@@ -184,7 +184,7 @@ export default function BlogPage() {
     const regularPosts = filteredPosts.filter((post) => !post.featured)
 
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="bg-gray-50 min-h-screen dark:bg-black">
             {/* Blog Header */}
             <div className="bg-primary/85 text-white py-16">
                 <div className="container mx-auto px-4">
@@ -242,7 +242,7 @@ export default function BlogPage() {
                                 </h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     {featuredPosts.map((post) => (
-                                        <Card key={post.id} className="overflow-hidden h-full py-0 hover:shadow-md transition-shadow">
+                                        <Card key={post.id} className="overflow-hidden h-full py-0 hover:shadow-md transition-shadow ">
                                             <div className="relative">
                                                 <Image
                                                     src={post.image || "/placeholder.svg"}
@@ -284,7 +284,7 @@ export default function BlogPage() {
                             {regularPosts.length > 0 ? (
                                 <div className="grid grid-cols-1 gap-8">
                                     {regularPosts.map((post) => (
-                                        <Card key={post.id} className="overflow-hidden hover:shadow-md transition-shadow py-0">
+                                        <Card key={post.id} className="overflow-hidden hover:shadow-md transition-shadow py-0 dark:bg-black">
                                             <div className="flex flex-col md:flex-row">
                                                 <div className="md:w-1/3">
                                                     <Image
@@ -364,7 +364,7 @@ export default function BlogPage() {
                     {/* Sidebar */}
                     <div className="lg:w-1/3 space-y-8">
                         {/* About Blog */}
-                        <Card>
+                        <Card className="dark:bg-black">
                             <CardContent className="p-6">
                                 <h3 className="text-xl font-bold mb-3">About Our Blog</h3>
                                 <p className="text-muted-foreground mb-4">
@@ -376,7 +376,7 @@ export default function BlogPage() {
                         </Card>
 
                         {/* Popular Posts */}
-                        <Card>
+                        <Card className="dark:bg-black">
                             <CardContent className="p-6">
                                 <h3 className="text-xl font-bold mb-4">Popular Posts</h3>
                                 <div className="space-y-4">
@@ -404,7 +404,7 @@ export default function BlogPage() {
                         </Card>
 
                         {/* Categories */}
-                        <Card>
+                        <Card className="dark:bg-black">
                             <CardContent className="p-6">
                                 <h3 className="text-xl font-bold mb-4">Categories</h3>
                                 <div className="space-y-2">
@@ -425,19 +425,7 @@ export default function BlogPage() {
                             </CardContent>
                         </Card>
 
-                        {/* Newsletter Signup */}
-                        <Card>
-                            <CardContent className="p-6">
-                                <h3 className="text-xl font-bold mb-3">Newsletter</h3>
-                                <p className="text-muted-foreground mb-4">
-                                    Subscribe to our newsletter and never miss out on new street food discoveries and stories.
-                                </p>
-                                <div className="space-y-3">
-                                    <Input placeholder="Your email address" />
-                                    <Button className="w-full bg-primary/80 hover:bg-primary">Subscribe</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
+                       
                     </div>
                 </div>
             </div>

@@ -116,7 +116,7 @@ export default function PostsPage() {
       {/* Layout */}
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Filters */}
-        <aside className="w-full lg:w-1/4 border p-4 rounded-md shadow-sm bg-white">
+        <aside className="w-full lg:w-1/4 border p-4 rounded-md shadow-sm bg-white text-black">
           <h2 className="text-xl font-semibold mb-4">Filters</h2>
 
           <div className="mb-4">
@@ -171,7 +171,7 @@ export default function PostsPage() {
 
           <button
             onClick={handleFilter}
-            className="mt-4 w-full bg-[#FF6168] text-white py-2 rounded hover:bg-red-700 text-sm"
+            className="mt-4 w-full bg-[#FF6168] text-white py-2 rounded hover:bg-red-700 text-sm cursor-pointer"
           >
             Apply Filters
           </button>
@@ -221,6 +221,7 @@ export default function PostsPage() {
                     </CardContent>
                     <CardFooter className=" pt-0 pb-3 flex justify-between items-center">
                       <Badge variant="secondary">{post.priceRange}</Badge>
+                      <Badge>{post?.price} TK</Badge>
                     </CardFooter>
                   </Card>
                 </Link>
@@ -234,7 +235,7 @@ export default function PostsPage() {
               <Button
                 disabled={currentPage === 1}
                 onClick={() => setCurrentPage(currentPage - 1)}
-                className={`px-3 py-1 rounded bg-transparent text-black hover:bg-primary hover:text-white transition-colors duration-300 `}
+                className={`px-3 py-1 rounded bg-transparent text-black dark:bg-primary dark:text-white hover:bg-primary hover:text-white transition-colors duration-300 `}
               >
                 <ArrowLeft />
               </Button>
@@ -242,7 +243,7 @@ export default function PostsPage() {
                 <Button
                   key={i}
                   onClick={() => setCurrentPage(i + 1)}
-                  className={`px-4 py-1.5 rounded border  ${currentPage === i + 1 ? "bg-primary text-white" : "bg-transparent text-black hover:bg-primary hover:text-white"}
+                  className={`px-4 py-1.5 rounded border  ${currentPage === i + 1 ? "bg-primary text-white" : "bg-transparent text-black hover:bg-primary hover:text-white dark:bg-primary dark:text-white "}
                 }`}
                 >
                   {i + 1}
@@ -251,7 +252,7 @@ export default function PostsPage() {
               <Button
                 disabled={currentPage === totalPages}
                 onClick={() => setCurrentPage(currentPage + 1)}
-                className={`px-3 py-1 rounded bg-transparent text-black hover:bg-primary hover:text-white transition-colors duration-300 `}
+                className={`px-3 py-1 rounded bg-transparent text-black hover:bg-primary hover:text-white transition-colors duration-300 dark:bg-primary dark:text-white  `}
               >
                 <ArrowRight />
               </Button>

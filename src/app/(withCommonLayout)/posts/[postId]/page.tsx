@@ -28,8 +28,8 @@ export default async function PostPage(props: any) {
     post.ratings?.reduce((acc: number, r: IRating) => acc + r.value, 0) / post.ratings.length || 0
 
   return (
-    <div className="container py-8">
-      <Card>
+    <div className="container py-8 ">
+      <Card className="dark:bg-black">
         <div className="relative h-[300px] sm:h-[400px]">
           <Image
             src={post.image || "/placeholder.svg"}
