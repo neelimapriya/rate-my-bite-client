@@ -4,7 +4,7 @@
 
 ## 🍔 Overview
 
-Rate My Bite is a Next.js web application where users can discover, post, and review street food spots. The platform features premium content for subscribed users, an admin dashboard for content moderation, and a comprehensive street food discovery experience.
+Rate My Bite is a dynamic web application built with Next.js, designed for discovering, sharing, and reviewing street food spots. Users can explore local favorites, contribute their own finds, and leave reviews. The platform includes premium content access for subscribers, an admin dashboard for efficient content moderation, and delivers a comprehensive and engaging street food discovery experience.
 
 ## ✨ Features
 
