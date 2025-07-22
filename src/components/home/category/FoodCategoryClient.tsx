@@ -19,9 +19,9 @@ const FoodCategoryClient = ({ data }: Props) => {
       />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
-        {data.map((category, index) => (
+        {data?.map((category, index) => (
           <motion.div
-            key={category.id}
+            key={category?.id}
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -36,10 +36,10 @@ const FoodCategoryClient = ({ data }: Props) => {
               transition={{ type: "spring", stiffness: 300 }}
               className="bg-white group relative shadow-md cursor-pointer overflow-hidden rounded-lg transition-all"
             >
-              <Link href={`/posts?category=${category.id}`}>
+              <Link href={`/posts?category=${category?.id}`}>
                 <Image
-                  src={category.image}
-                  alt={category.name}
+                  src={category?.image}
+                  alt={category?.name}
                   width={400}
                   height={300}
                   loading="lazy"
@@ -47,7 +47,7 @@ const FoodCategoryClient = ({ data }: Props) => {
                 />
                 <div className="p-3 text-center">
                   <h3 className="text-lg font-semibold text-[#FF3C48] group-hover:underline">
-                    {category.name}
+                    {category?.name}
                   </h3>
                 </div>
               </Link>
