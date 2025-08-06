@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Clock, Users, CalendarDays } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 import img1 from "@/assets/event/1.jpeg"
 import img2 from "@/assets/event/2.jpeg"
 import img3 from "@/assets/event/3'.jpeg"
@@ -55,8 +56,13 @@ export function FoodEvents() {
 
 
     return (
-
-        <section className="container px-4 mx-auto bg-white/90 dark:bg-black/80 rounded-2xl shadow-xl py-12 mb-16 border border-orange-100 dark:border-orange-900">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="container px-4 mx-auto bg-white/90 dark:bg-black/80 rounded-2xl shadow-xl py-12 mb-16 border border-orange-100 dark:border-orange-900"
+        >
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
                 <div>
                     <h2 className="text-3xl font-bold flex items-center text-primary drop-shadow">
@@ -74,61 +80,75 @@ export function FoodEvents() {
                 </Button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {upcomingEvents.map((event) => (
-                    <div key={event.id}>
-                        <Card className="overflow-hidden py-0 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div className="relative h-48">
-                                <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-cover" />
-                                <div className="absolute top-2 right-2">
-                                    <Badge className={event.isFree ? "bg-green-600" : "bg-primary"}>
-                                        {event.isFree ? "Free" : event.price}
-                                    </Badge>
-                                </div>
-                            </div>
-
-                            <CardHeader className="">
-                                <CardTitle className="text-lg line-clamp-1 text-primary font-bold">{event.title}</CardTitle>
-                                <div className="flex items-center text-sm text-gray-500">
-                                    <MapPin className="h-3 w-3 mr-1 flex-shrink-0 text-primary" />
-                                    <span className="truncate">{event.location}</span>
-                                </div>
-                            </CardHeader>
-
-                            <CardContent className="py-0 pb-5 flex-grow">
-                                <div className="space-y-2 text-sm mb-2">
-                                    <div className="flex items-center text-gray-700">
-                                        <CalendarDays className="h-4 w-4 mr-2 text-orange-600" />
-                                        {event.date}
-                                    </div>
-                                    <div className="flex items-center text-gray-700">
-                                        <Clock className="h-4 w-4 mr-2 text-orange-600" />
-                                        {event.time}
-                                    </div>
-                                    <div className="flex items-center text-gray-700">
-                                        <Users className="h-4 w-4 mr-2 text-orange-600" />
-                                        {event.attendees} attending
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key="food-events"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 30 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {upcomingEvents.map((event, i) => (
+                        <motion.div
+                            key={event.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
+                        >
+                            <Card className="overflow-hidden py-0 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div className="relative h-48">
+                                    <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-cover" />
+                                    <div className="absolute top-2 right-2">
+                                        <Badge className={event.isFree ? "bg-green-600" : "bg-primary"}>
+                                            {event.isFree ? "Free" : event.price}
+                                        </Badge>
                                     </div>
                                 </div>
 
-                                <CardDescription className="line-clamp-2">{event.description}</CardDescription>
-
-                                {event.tags && (
-                                    <div className="flex flex-wrap gap-1 mt-3">
-                                        {event.tags.map((tag) => (
-                                            <Badge key={tag} variant="default" className="text-xs rounded-full bg-orange-100 text-primary">
-                                                {tag}
-                                            </Badge>
-                                        ))}
+                                <CardHeader className="">
+                                    <CardTitle className="text-lg line-clamp-1 text-primary font-bold">{event.title}</CardTitle>
+                                    <div className="flex items-center text-sm text-gray-500">
+                                        <MapPin className="h-3 w-3 mr-1 flex-shrink-0 text-primary" />
+                                        <span className="truncate">{event.location}</span>
                                     </div>
-                                )}
-                            </CardContent>
+                                </CardHeader>
 
-                        </Card>
-                    </div>
-                ))}
-            </div>
-        </section>
+                                <CardContent className="py-0 pb-5 flex-grow">
+                                    <div className="space-y-2 text-sm mb-2">
+                                        <div className="flex items-center text-gray-700">
+                                            <CalendarDays className="h-4 w-4 mr-2 text-orange-600" />
+                                            {event.date}
+                                        </div>
+                                        <div className="flex items-center text-gray-700">
+                                            <Clock className="h-4 w-4 mr-2 text-orange-600" />
+                                            {event.time}
+                                        </div>
+                                        <div className="flex items-center text-gray-700">
+                                            <Users className="h-4 w-4 mr-2 text-orange-600" />
+                                            {event.attendees} attending
+                                        </div>
+                                    </div>
+
+                                    <CardDescription className="line-clamp-2">{event.description}</CardDescription>
+
+                                    {event.tags && (
+                                        <div className="flex flex-wrap gap-1 mt-3">
+                                            {event.tags.map((tag) => (
+                                                <Badge key={tag} variant="default" className="text-xs rounded-full bg-orange-100 text-primary">
+                                                    {tag}
+                                                </Badge>
+                                            ))}
+                                        </div>
+                                    )}
+                                </CardContent>
+
+                            </Card>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </AnimatePresence>
+        </motion.section>
 
     )
 }

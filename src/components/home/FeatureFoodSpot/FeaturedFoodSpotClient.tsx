@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IPost } from "@/types";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface Props {
@@ -30,23 +30,12 @@ const FeaturedFoodSpotClient = ({ postsWithAverage }: Props) => {
     .sort((a, b) => (b.averageRating ?? 0) - (a.averageRating ?? 0))
     .slice(0, 6);
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    }),
-  };
   return (
     <motion.section
       initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       className="container px-4 mx-auto"
     >
       <div className="relative mb-12">
@@ -72,20 +61,27 @@ const FeaturedFoodSpotClient = ({ postsWithAverage }: Props) => {
             { value: "top-rated", posts: topRated },
           ].map(({ value, posts }) => (
             <TabsContent key={value} value={value} className="mt-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {posts.map((spot, i) => (
-                  <motion.div
-                    key={spot.id}
-                    custom={i}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={cardVariants}
-                  >
-                    <PostCard spot={spot} />
-                  </motion.div>
-                ))}
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={value}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 30 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                  {posts.map((spot, i) => (
+                    <motion.div
+                      key={spot.id}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
+                    >
+                      <PostCard spot={spot} />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
             </TabsContent>
           ))}
         </Tabs>
