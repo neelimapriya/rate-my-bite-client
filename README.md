@@ -9,33 +9,39 @@ Rate My Bite is a dynamic web application built with Next.js, designed for disco
 ## ✨ Features
 
 - **User Authentication**
+
   - Register and login with email and password
   - JWT-based secure authentication
   - User profile management
 
 - **Food Discovery**
+
   - Browse street food spots
   - Search by name, category, or location
   - Filter by price range, rating, and popularity
   - View detailed information about each food spot
 
 - **Content Creation**
+
   - Post new street food discoveries
   - Upload images
   - Categorize and tag posts
   - Set price ranges and location information
 
 - **Interaction**
+
   - Upvote/downvote food spots
   - Rate spots from 1-5 stars
   - Comment on posts
 
 - **Premium Features**
+
   - Subscribe to access exclusive premium content
   - Integrated payment gateway (ShurjoPay/SSLCommerz)
   - Manage subscription
 
 - **Admin Dashboard**
+
   - Review and approve posts
   - Mark content as premium
   - Moderate comments and reviews
@@ -74,13 +80,15 @@ git clone https://github.com/neelimapriya/rate-my-bite-client
 
 Navigate to the project directory and install the necessary dependencies:
 
-   ```bash
-   cd rate-my-bite-client
-   npm install
-   ```
+```bash
+cd rate-my-bite-client
+npm install
+```
 
 ## 3. Set Up Environment Variables
+
 Create a .env file in the root of the project to store environment variables, such as MongoDB URI or any secret keys. Here’s an example:
+
 ```bash
 NEXT_PUBLIC_API=https://assignment9-flax.vercel.app/api
 JWT_ACCESS_SECRET=sdgsdgsdgjsdd
@@ -88,24 +96,27 @@ JWT_ACCESS_SECRET=sdgsdgsdgjsdd
 ```
 
 ## 4. Run the Project
+
 - **Development Mode**
-To start the project in development mode with hot reloading:
+  To start the project in development mode with hot reloading:
+
 ```bash
 npm run dev
 ```
+
 - **Production Mode**
-If you prefer to run the project in production mode:
+  If you prefer to run the project in production mode:
+
 ```bash
 npm run build
 ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-
-
 ## 📱 Pages & Features
 
 ### Public Pages
+
 - **Home**: Featured food spots and search
 - **Posts**: Browse all food spots with filters
 - **Blogs**: View all blogs
@@ -114,21 +125,25 @@ npm run build
 - **Contact**: Contact form
 
 ### Authenticated User Pages
+
 - **Post Food Spot**: Form to submit new food spots
 - **My Posts**: User's submitted food spots
 - **Profile**: User profile management
 - **Subscription**: Premium subscription management
 
 ### Premium User Pages
+
 - **Premium Food Spots**: Exclusive premium content
 
 ### Admin Pages
+
 - **Dashboard**: Overview of platform statistics
 - **Users**: View and manage user
 - **Posts**: Edit or delete existing posts
 - **Category**: View and manage category
 
 ```
-Admin Credential 
+Admin Credential
 admin@gmail.com
 Password- 123456
+```
